@@ -201,6 +201,15 @@ A ideia inicial de monitoramento inteligente dos estudos evoluiu para um ecossis
 
 [Documentação e planejamento no Notion](https://app.notion.com/p/31f0c2a5f910809ea41fdaf2f5c19c55)
 
+## Desenvolvedores
+
+O FocusMind está sendo desenvolvido por:
+
+- **Abner Alencar** — Desenvolvedor
+- **Marcelo Sanches** — Desenvolvedor
+
+Juntos, trabalhamos para transformar o FocusMind em uma plataforma de evolução pessoal acessível, moderna e integrada.
+
 ## Licença
 
 Ainda não definida. O projeto está em fase inicial de desenvolvimento e planejamento.

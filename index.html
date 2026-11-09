@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="FocusMind é uma plataforma de evolução pessoal que conecta estudos, movimento, conquistas e comunidade."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <title>FocusMind — Evolua do seu jeito</title>
+
+    <style>
+      :root {
+        --color-background: #0a0a0a;
+        --color-surface: #151515;
+        --color-surface-soft: #1d1d1d;
+        --color-text: #ffffff;
+        --color-text-muted: #b8b8b8;
+        --color-accent: #ff702b;
+        --color-border: #303030;
+        --content-width: 1120px;
+        --radius-large: 28px;
+        --radius-medium: 18px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background: var(--color-background);
+        color: var(--color-text);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:focus-visible {
+        outline: 3px solid var(--color-accent);
+        outline-offset: 4px;
+      }
+
+      .container {
+        width: min(calc(100% - 40px), var(--content-width));
+        margin-inline: auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(10, 10, 10, 0.9);
+        backdrop-filter: blur(16px);
+      }
+
+      .navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 72px;
+        gap: 24px;
+      }
+
+      .brand {
+        color: var(--color-text);
+        font-size: 1.25rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        text-decoration: none;
+      }
+
+      .brand span {
+        color: var(--color-accent);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 180ms ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--color-text);
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 112px 0 96px;
+      }
+
+      .hero::after {
+        position: absolute;
+        top: 10%;
+        right: -12%;
+        width: min(45vw, 560px);
+        aspect-ratio: 1;
+        border: 1px solid rgba(255, 112, 43, 0.36);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 112, 43, 0.14), transparent 68%);
+        content: "";
+        pointer-events: none;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 790px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 24px;
+        color: var(--color-accent);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 28px;
+        height: 2px;
+        background: currentColor;
+        content: "";
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-bottom: 28px;
+        font-size: clamp(3.2rem, 8vw, 6.6rem);
+        line-height: 0.95;
+        letter-spacing: -0.075em;
+      }
+
+      h1 span {
+        color: var(--color-accent);
+      }
+
+      .hero-description {
+        max-width: 680px;
+        margin-bottom: 36px;
+        color: var(--color-text-muted);
+        font-size: clamp(1.05rem, 2vw, 1.3rem);
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        padding: 0 22px;
+        border: 1px solid var(--color-border);
+        border-radius: 999px;
+        font-weight: 750;
+        text-decoration: none;
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          background 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button-primary {
+        border-color: var(--color-accent);
+        background: var(--color-accent);
+        color: #111111;
+      }
+
+      .button-secondary:hover {
+        border-color: var(--color-accent);
+      }
+
+      .section {
+        padding: 88px 0;
+      }
+
+      .section-heading {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+        align-items: end;
+        gap: 48px;
+        margin-bottom: 42px;
+      }
+
+      .section-heading h2 {
+        margin-bottom: 0;
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        line-height: 1;
+        letter-spacing: -0.055em;
+      }
+
+      .section-heading p {
+        margin-bottom: 0;
+        color: var(--color-text-muted);
+      }
+
+      .purpose-panel {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-large);
+        background: var(--color-surface);
+      }
+
+      .purpose-copy {
+        padding: clamp(30px, 5vw, 58px);
+      }
+
+      .purpose-copy h2 {
+        margin-bottom: 22px;
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        line-height: 1.05;
+        letter-spacing: -0.05em;
+      }
+
+      .purpose-copy p {
+        max-width: 640px;
+        margin-bottom: 0;
+        color: var(--color-text-muted);
+        font-size: 1.08rem;
+      }
+
+      .purpose-highlight {
+        display: flex;
+        min-height: 280px;
+        align-items: center;
+        justify-content: center;
+        padding: 32px;
+        background: var(--color-accent);
+        color: #111111;
+        text-align: center;
+      }
+
+      .purpose-highlight strong {
+        max-width: 350px;
+        font-size: clamp(2.25rem, 5vw, 4.5rem);
+        line-height: 0.95;
+        letter-spacing: -0.065em;
+      }
+
+      .modules-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .module-card {
+        position: relative;
+        min-height: 260px;
+        padding: 32px;
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-medium);
+        background: var(--color-surface);
+      }
+
+      .module-number {
+        display: block;
+        margin-bottom: 54px;
+        color: var(--color-accent);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+      }
+
+      .module-card h3 {
+        margin-bottom: 12px;
+        font-size: clamp(1.55rem, 3vw, 2.15rem);
+        letter-spacing: -0.04em;
+      }
+
+      .module-card p {
+        max-width: 460px;
+        margin-bottom: 0;
+        color: var(--color-text-muted);
+      }
+
+      .module-card::after {
+        position: absolute;
+        right: -40px;
+        bottom: -65px;
+        width: 165px;
+        height: 165px;
+        border: 1px solid rgba(255, 112, 43, 0.25);
+        border-radius: 50%;
+        content: "";
+      }
+
+      .journey {
+        border-block: 1px solid var(--color-border);
+        background: var(--color-surface);
+      }
+
+      .journey-steps {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        overflow: hidden;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-medium);
+        background: var(--color-border);
+      }
+
+      .journey-step {
+        min-height: 220px;
+        padding: 30px;
+        background: var(--color-background);
+      }
+
+      .journey-step span {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        margin-bottom: 44px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--color-accent);
+        color: #111111;
+        font-weight: 850;
+      }
+
+      .journey-step h3 {
+        margin-bottom: 10px;
+        font-size: 1.22rem;
+      }
+
+      .journey-step p {
+        margin-bottom: 0;
+        color: var(--color-text-muted);
+      }
+
+      .closing {
+        text-align: center;
+      }
+
+      .closing h2 {
+        max-width: 780px;
+        margin-inline: auto;
+        margin-bottom: 22px;
+        font-size: clamp(2.6rem, 6vw, 5.4rem);
+        line-height: 0.98;
+        letter-spacing: -0.065em;
+      }
+
+      .closing h2 span {
+        color: var(--color-accent);
+      }
+
+      .closing p {
+        max-width: 620px;
+        margin: 0 auto;
+        color: var(--color-text-muted);
+      }
+
+      .site-footer {
+        border-top: 1px solid var(--color-border);
+        padding: 28px 0;
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      @media (max-width: 760px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero {
+          padding: 86px 0 72px;
+        }
+
+        .hero::after {
+          top: 35%;
+          right: -35%;
+          width: 85vw;
+        }
+
+        .section {
+          padding: 68px 0;
+        }
+
+        .section-heading,
+        .purpose-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .section-heading {
+          gap: 20px;
+        }
+
+        .modules-grid,
+        .journey-steps {
+          grid-template-columns: 1fr;
+        }
+
+        .journey-steps {
+          gap: 1px;
+        }
+
+        .purpose-highlight {
+          min-height: 220px;
+        }
+
+        .footer-content {
+          flex-direction: column;
+          gap: 6px;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="navigation container" aria-label="Navegação principal">
+        <a class="brand" href="#inicio" aria-label="FocusMind — página inicial">
+          Focus<span>Mind</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#proposito">Propósito</a></li>
+          <li><a href="#modulos">Módulos</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="container hero-content">
+          <p class="eyebrow">Uma plataforma para a sua evolução</p>
+          <h1>Evolua do <span>seu jeito.</span></h1>
+          <p class="hero-description">
+            O FocusMind reúne aprendizado, atividade física, progresso e comunidade em
+            uma experiência pensada para transformar pequenas ações em evolução contínua.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#modulos">Conheça os módulos</a>
+            <a class="button button-secondary" href="#proposito">Entenda o projeto</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="proposito">
+        <div class="container">
+          <div class="purpose-panel">
+            <div class="purpose-copy">
+              <p class="eyebrow">Nosso propósito</p>
+              <h2>Progresso pessoal com direção e equilíbrio.</h2>
+              <p>
+                Evoluir exige constância, mas organizar estudos, saúde, metas e conexões
+                em ferramentas separadas torna esse caminho mais difícil. O FocusMind
+                nasce para integrar essas dimensões e dar clareza ao próximo passo de
+                cada pessoa.
+              </p>
+            </div>
+            <div class="purpose-highlight" aria-label="Mensagem principal do FocusMind">
+              <strong>Um passo de cada vez.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="modulos">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Quatro frentes, uma jornada</p>
+              <h2>Tudo o que move a sua evolução.</h2>
+            </div>
+            <p>
+              Cada módulo atende uma dimensão do desenvolvimento pessoal e se conecta aos
+              demais para formar uma visão completa do progresso.
+            </p>
+          </div>
+
+          <div class="modules-grid">
+            <article class="module-card">
+              <span class="module-number">01 / APRENDER</span>
+              <h3>FocusLearn</h3>
+              <p>
+                Organização de estudos, produtividade e monitoramento de sessões para
+                aprender com mais intenção.
+              </p>
+            </article>
+
+            <article class="module-card">
+              <span class="module-number">02 / MOVIMENTAR</span>
+              <h3>FocusMove</h3>
+              <p>
+                Atividade física, treinos e hábitos saudáveis para manter corpo e mente
+                em movimento.
+              </p>
+            </article>
+
+            <article class="module-card">
+              <span class="module-number">03 / CONQUISTAR</span>
+              <h3>FocusLevel</h3>
+              <p>
+                XP, níveis, missões e conquistas que tornam o progresso visível e ajudam
+                a sustentar a motivação.
+              </p>
+            </article>
+
+            <article class="module-card">
+              <span class="module-number">04 / CONECTAR</span>
+              <h3>FocusTeams</h3>
+              <p>
+                Equipes, comunidades, desafios coletivos e comunicação para evoluir com
+                outras pessoas.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section journey" id="experiencia">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Como vai funcionar</p>
+              <h2>Uma rotina que respeita o seu ritmo.</h2>
+            </div>
+            <p>
+              A visão do produto é transformar objetivos pessoais em ações acompanháveis,
+              sem impor uma única forma de evoluir.
+            </p>
+          </div>
+
+          <div class="journey-steps">
+            <article class="journey-step">
+              <span>1</span>
+              <h3>Defina o foco</h3>
+              <p>Escolha objetivos e atividades alinhados ao momento da sua jornada.</p>
+            </article>
+            <article class="journey-step">
+              <span>2</span>
+              <h3>Construa constância</h3>
+              <p>Registre sessões, treinos, hábitos e missões realizadas no dia a dia.</p>
+            </article>
+            <article class="journey-step">
+              <span>3</span>
+              <h3>Acompanhe a evolução</h3>
+              <p>Visualize progresso, conquistas e conexões que fortalecem sua trajetória.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section closing" aria-labelledby="closing-title">
+        <div class="container">
+          <p class="eyebrow">FocusMind</p>
+          <h2 id="closing-title">Sua evolução não precisa seguir um <span>molde.</span></h2>
+          <p>
+            Estudos, movimento, conquistas e comunidade reunidos para ajudar cada pessoa
+            a avançar de uma forma possível, consciente e própria.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <span>FocusMind — Evolua do seu jeito.</span>
+        <span>Desenvolvido por Abner Alencar e Marcelo Sanches.</span>
+      </div>
+    </footer>
+  </body>
+</html>

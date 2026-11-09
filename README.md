@@ -2,112 +2,30 @@
 
 > **Evolua do seu jeito.**
 
-O **FocusMind** é uma plataforma de evolução pessoal criada para reunir estudos, produtividade, atividade física, gamificação e comunidade em uma experiência integrada. O projeto busca ajudar cada pessoa a organizar sua rotina, acompanhar o próprio progresso e construir constância respeitando seus objetivos e seu ritmo.
+**FocusMind** é uma plataforma de evolução pessoal que une aprendizagem, atividade física, hábitos, gamificação e comunidade em uma experiência acessível, moderna e motivadora.
 
-## Desenvolvedores
+Nosso objetivo é ajudar pessoas de diferentes idades a desenvolver seu potencial, respeitando seus ritmos, dificuldades e conquistas.
 
-- **Abner Alencar**
-- **Marcelo Sanches**
+**Status:** Em planejamento e desenvolvimento inicial. As funcionalidades descritas são objetivos do projeto e ainda não estão disponíveis para uso.
 
-## Problema
+## Entrega acadêmica atual
 
-Quem deseja evoluir em diferentes áreas da vida costuma depender de várias ferramentas isoladas: uma para estudos, outra para treinos, outra para hábitos e outras para comunicação ou acompanhamento de metas. Essa fragmentação dificulta a organização da rotina, reduz a visão do progresso e pode prejudicar a motivação ao longo do tempo.
-
-O FocusMind propõe centralizar essas experiências, tornando o desenvolvimento pessoal mais claro, estimulante e conectado.
-
-## Público-alvo
-
-O projeto é voltado para estudantes, profissionais e demais pessoas interessadas em:
-
-- organizar estudos e sessões de foco;
-- desenvolver hábitos mais saudáveis;
-- acompanhar metas e evolução pessoal;
-- participar de equipes e desafios coletivos;
-- manter a motivação por meio de missões e conquistas.
-
-## Como funciona
-
-A visão do FocusMind é permitir que o usuário defina seus focos, registre atividades e acompanhe sua evolução em quatro módulos complementares:
-
-| Módulo | Objetivo |
-| --- | --- |
-| **FocusLearn** | Estudos, produtividade e monitoramento de sessões. |
-| **FocusMove** | Atividade física, treinos e hábitos saudáveis. |
-| **FocusLevel** | XP, níveis, missões e conquistas. |
-| **FocusTeams** | Equipes, comunidades, desafios coletivos e comunicação. |
-
-Esta primeira etapa apresenta apenas a proposta do produto em uma página institucional estática. As funcionalidades descritas representam a visão de longo prazo e serão implementadas gradualmente.
-
-## Tecnologias planejadas
-
-### Interfaces
-
-- **Web:** React + TypeScript;
-- **Mobile:** React Native para Android e iOS;
-- **Desktop:** Electron + React.
-
-### Backend e dados
-
-- **API:** ASP.NET Core com C#;
-- **Banco de dados:** PostgreSQL;
-- **Autenticação:** Supabase Auth;
-- **Comunicação em tempo real:** SignalR;
-- **Voz (etapa futura):** WebRTC.
-
-### Primeira entrega
-
-- HTML5 semântico;
-- CSS3 responsivo;
-- Git e GitHub para versionamento.
-
-## Estrutura atual
+Esta primeira entrega de versionamento mantém o escopo propositalmente pequeno e contém:
 
 ```text
 FocusMind/
-├── .gitignore   # Arquivos e diretórios ignorados pelo Git
-├── index.html   # Página inicial responsiva do projeto
-└── README.md    # Documentação e visão geral
+├── assets/icons/             # Pack oficial de ícones em SVG e PNG
+├── scripts/                  # Geração dos PNGs a partir dos SVGs
+├── .gitignore                # Regras de arquivos ignorados pelo Git
+├── index.html                # Apresentação institucional responsiva
+└── README.md                 # Documentação do projeto
 ```
 
-A estrutura inicial é propositalmente pequena para atender à atividade acadêmica sem antecipar a implementação completa do sistema. Na evolução do produto, os clientes web, mobile e desktop e o backend poderão ser organizados em diretórios próprios.
+A página atual apresenta o conceito e os quatro módulos sem antecipar a implementação completa do produto. A evolução planejada separará as aplicações web, mobile e desktop e a API em diretórios próprios dentro do monorepo.
 
-## Arquitetura planejada
+### Como executar a página
 
-O FocusMind será um ecossistema multiplataforma. A página `index.html` desta entrega é apenas a apresentação institucional inicial, não o aplicativo completo. A evolução prevista separa cada cliente e o backend, permitindo que todos compartilhem as mesmas regras de negócio e dados por meio da API.
-
-```text
-FocusMind/
-├── apps/
-│   ├── web/          # Site e aplicação web em React + TypeScript
-│   ├── mobile/       # Aplicativo Android e iOS em React Native
-│   └── desktop/      # Aplicativo desktop em Electron + React
-├── services/
-│   └── api/          # Backend em ASP.NET Core / C#
-├── docs/             # Documentação técnica e de produto
-└── README.md
-```
-
-Essa estrutura é uma referência para as próximas etapas e ainda não foi criada, evitando adicionar código ou dependências fora do escopo da atividade atual.
-
-## Como executar
-
-Esta versão não exige instalação de dependências.
-
-1. Clone o repositório:
-
-   ```bash
-   git clone <URL-DO-REPOSITORIO>
-   ```
-
-2. Entre no diretório do projeto:
-
-   ```bash
-   cd FocusMind
-   ```
-
-3. Abra o arquivo `index.html` diretamente no navegador.
-
-Como alternativa, utilize um servidor HTTP local. Com Python instalado:
+Não é necessário instalar dependências. Clone o repositório e abra `index.html` no navegador. Opcionalmente, execute um servidor local:
 
 ```bash
 python -m http.server 8000
@@ -115,36 +33,212 @@ python -m http.server 8000
 
 Depois, acesse `http://localhost:8000`.
 
-## Identidade visual
+## Nossa missão
 
-A interface respeita a identidade visual aprovada do FocusMind:
+Transformar a maneira como as pessoas estudam, cuidam do corpo e acompanham seu desenvolvimento pessoal.
 
-- preto;
-- branco;
-- laranja `#FF702B`.
+Acreditamos que evoluir não significa ser perfeito todos os dias, mas encontrar ferramentas e oportunidades para continuar crescendo.
 
-Nenhuma nova logo foi criada nesta etapa. Quando os arquivos oficiais estiverem disponíveis, eles poderão ser incorporados sem alterar a estrutura da página.
+O FocusMind não é uma ferramenta de diagnóstico ou tratamento de condições de saúde.
 
-## Melhorias futuras
+## O ecossistema FocusMind
 
-- migrar a interface web para React + TypeScript;
-- criar autenticação e perfis de usuário;
-- implementar sessões de estudo e produtividade no FocusLearn;
-- adicionar treinos, hábitos e indicadores no FocusMove;
-- desenvolver o sistema de XP, níveis, missões e conquistas do FocusLevel;
-- criar equipes, comunidades, desafios e mensagens no FocusTeams;
-- implementar a API em ASP.NET Core e persistência em PostgreSQL;
-- integrar Supabase Auth e SignalR;
-- desenvolver aplicativos mobile e desktop;
-- avaliar chamadas de voz por WebRTC;
-- ampliar testes, acessibilidade, segurança e observabilidade.
+### FocusLearn — Aprenda do seu jeito
 
-## Status do projeto
+Um ambiente inteligente para tornar os estudos mais organizados e produtivos.
 
-🚧 **Em desenvolvimento — etapa inicial acadêmica.**
+**Funcionalidades planejadas:**
+- Cronômetro de estudos manual e inteligente opcional.
+- Registro de sessões, pausas e tempo efetivo de concentração.
+- Organização de matérias, objetivos e conteúdos.
+- Histórico e relatórios de produtividade.
+- Recomendações de aulas, vídeos e professores.
+- Trilhas de aprendizagem personalizadas.
+- Avaliações e recomendações feitas pela comunidade.
 
-O foco atual é estabelecer a documentação, o versionamento e uma apresentação responsiva do conceito. O sistema completo ainda não está implementado.
+### FocusMove — Movimento é evolução
+
+Um espaço dedicado à atividade física, ao bem-estar e à construção de hábitos saudáveis.
+
+**Funcionalidades planejadas:**
+- Registro de treinos e exercícios.
+- Caminhadas e corridas.
+- Desafios físicos individuais e coletivos.
+- Acompanhamento de hidratação.
+- Metas adaptáveis a diferentes níveis.
+- Histórico de atividades e evolução.
+- Incentivo ao descanso e à recuperação.
+
+### FocusLevel — Cada conquista importa
+
+Sistema de gamificação que reconhece a evolução do usuário.
+
+**Funcionalidades planejadas:**
+- Pontos de experiência (XP).
+- Níveis e conquistas.
+- Missões pessoais.
+- Temporadas e desafios especiais.
+- Rankings equilibrados.
+- Recompensas virtuais.
+- Progresso integrado entre os módulos.
+
+A gamificação deve incentivar a consistência sem punir o usuário por pausas ou dias difíceis.
+
+### FocusTeams — Evoluir juntos
+
+Um ambiente social para compartilhar conhecimento, experiências e conquistas.
+
+**Funcionalidades planejadas:**
+- Criação e personalização de equipes.
+- Convites, membros e funções.
+- Feed de estudos, treinos e conquistas.
+- Publicações com imagens.
+- Chat de texto.
+- Salas de voz.
+- Sessões coletivas.
+- Desafios entre equipes.
+- Rankings coletivos.
+- Privacidade, denúncias e moderação.
+
+## Plataformas
+
+O FocusMind foi planejado para oferecer uma experiência integrada em:
+
+- **Web:** navegadores modernos.
+- **Android:** aplicativo mobile.
+- **iOS:** aplicativo mobile.
+- **Windows:** aplicativo desktop.
+- **macOS:** possibilidade de expansão futura.
+
+A proposta é que todas as plataformas compartilhem a mesma conta e sincronizem os dados de evolução.
+
+## Tecnologias planejadas
+
+| Camada | Tecnologia |
+|---|---|
+| Frontend Web | React + TypeScript |
+| Aplicativo Mobile | React Native |
+| Desktop | Electron + React |
+| Backend | C# / ASP.NET Core |
+| Banco de dados | PostgreSQL |
+| Autenticação | Supabase Auth |
+| Armazenamento | Storage |
+| Comunicação em tempo real | SignalR |
+| Chamadas de voz | WebRTC |
+| Análises inteligentes futuras | Python |
+
+A arquitetura será organizada em um monorepo, facilitando o compartilhamento de componentes, tipos, regras e funcionalidades.
+
+As escolhas tecnológicas poderão ser validadas durante a implementação.
+
+## Identidade visual oficial
+
+O FocusMind possui uma identidade visual já aprovada.
+
+**Conceito da marca:**
+- Logo principal com a letra F estilizada e um perfil humano integrado.
+- Brilho representando pensamento, movimento e transformação.
+- Símbolo F simplificado para ícones e aplicações reduzidas.
+- Estética moderna, expressiva e minimalista.
+- Preto profundo, branco e laranja vibrante.
+
+**Paleta de referência:**
+- Laranja principal: #FF702B
+- Creme de apoio: #FFF7ED
+- Escuro de apoio: #30231D
+- Preto profundo como base visual.
+
+**Nome:** FocusMind
+
+**Slogan:** Evolua do seu jeito.
+
+A identidade original deve ser preservada. Os arquivos gráficos aprovados serão adicionados posteriormente, sem substituição por logos provisórias.
+
+## Roadmap de desenvolvimento
+
+### V1 — Fundação e MVP
+
+- [ ] Estrutura inicial do projeto
+- [ ] Design system e componentes
+- [ ] Login e cadastro
+- [ ] Autenticação por Google, Apple, Facebook e e-mail
+- [ ] Perfil do usuário
+- [ ] FocusLearn: sessões e histórico de estudos
+- [ ] FocusMove: atividades e registros
+- [ ] FocusLevel: XP, níveis e conquistas
+- [ ] FocusTeams: equipes, convites e feed
+- [ ] Chat de texto e funcionalidades sociais básicas
+- [ ] Testes de segurança e acessibilidade
+
+### V2 — Comunidade e colaboração
+
+- [ ] Salas de voz
+- [ ] Sessões coletivas
+- [ ] Desafios entre equipes
+- [ ] Aprimoramento dos rankings e da moderação
+
+### V3 — Inteligência e integrações
+
+- [ ] Recomendações inteligentes
+- [ ] Relatórios avançados
+- [ ] Integrações opcionais com smartwatches
+- [ ] Monitoramento inteligente de produtividade
+- [ ] Personalização avançada da experiência
+
+## Privacidade e segurança
+
+O projeto deverá adotar boas práticas de segurança e proteção de dados, incluindo:
+
+- Autenticação segura.
+- Proteção das informações pessoais.
+- Controle de privacidade dos perfis.
+- Permissões para funcionalidades inteligentes.
+- Possibilidade de exclusão de conta.
+- Moderação e denúncia de conteúdos.
+- Adequação à LGPD.
+- Atenção especial à segurança de menores de idade.
+
+Nenhum recurso de acompanhamento inteligente deverá ser obrigatório.
+
+## Princípios do projeto
+
+**Acessibilidade:** ferramentas úteis para pessoas com diferentes necessidades e experiências.
+
+**Autonomia:** cada pessoa estabelece seu próprio ritmo.
+
+**Evolução:** o progresso é individual, não uma competição obrigatória.
+
+**Comunidade:** compartilhar conhecimento e crescer em conjunto.
+
+**Tecnologia responsável:** funcionalidades inteligentes com transparência, segurança e controle do usuário.
+
+## Origem do FocusMind
+
+O projeto nasceu de conversas e reflexões sobre dificuldades de concentração, organização de estudos, motivação e desenvolvimento pessoal.
+
+A ideia inicial de monitoramento inteligente dos estudos evoluiu para um ecossistema mais amplo, integrando educação, movimento, gamificação e comunidade.
+
+**Idealização:** Abner Alencar.
+
+**Colaboração nas ideias iniciais:** Adriano.
+
+**Planejamento consolidado:** outubro de 2026.
+
+[Documentação e planejamento no Notion](https://app.notion.com/p/31f0c2a5f910809ea41fdaf2f5c19c55)
+
+## Desenvolvedores
+
+O FocusMind está sendo desenvolvido por:
+
+- **Abner Alencar** — Desenvolvedor
+- **Marcelo Sanches** — Desenvolvedor
+
+Juntos, trabalhamos para transformar o FocusMind em uma plataforma de evolução pessoal acessível, moderna e integrada.
 
 ## Licença
 
-Ainda não foi definida uma licença para o projeto.
+Ainda não definida. O projeto está em fase inicial de desenvolvimento e planejamento.
+
+---
+
+**FocusMind — Evolua do seu jeito.**

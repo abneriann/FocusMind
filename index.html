@@ -302,11 +302,28 @@
 
       .module-number {
         display: block;
-        margin-bottom: 54px;
         color: var(--color-accent);
         font-size: 0.78rem;
         font-weight: 800;
         letter-spacing: 0.12em;
+      }
+
+      .module-card-header {
+        display: flex;
+        min-height: 82px;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 28px;
+      }
+
+      .module-icon {
+        position: relative;
+        z-index: 1;
+        width: 76px;
+        height: 76px;
+        flex: 0 0 76px;
+        object-fit: contain;
       }
 
       .module-card h3 {
@@ -538,7 +555,17 @@
 
           <div class="modules-grid">
             <article class="module-card">
-              <span class="module-number">01 / APRENDER</span>
+              <div class="module-card-header">
+                <span class="module-number">01 / APRENDER</span>
+                <img
+                  class="module-icon"
+                  src="assets/icons/png/modulos/focuslearn.png"
+                  alt=""
+                  width="76"
+                  height="76"
+                  loading="lazy"
+                />
+              </div>
               <h3>FocusLearn</h3>
               <p>
                 Organização de estudos, produtividade e monitoramento de sessões para
@@ -547,7 +574,17 @@
             </article>
 
             <article class="module-card">
-              <span class="module-number">02 / MOVIMENTAR</span>
+              <div class="module-card-header">
+                <span class="module-number">02 / MOVIMENTAR</span>
+                <img
+                  class="module-icon"
+                  src="assets/icons/png/modulos/focusmove.png"
+                  alt=""
+                  width="76"
+                  height="76"
+                  loading="lazy"
+                />
+              </div>
               <h3>FocusMove</h3>
               <p>
                 Atividade física, treinos e hábitos saudáveis para manter corpo e mente
@@ -556,7 +593,17 @@
             </article>
 
             <article class="module-card">
-              <span class="module-number">03 / CONQUISTAR</span>
+              <div class="module-card-header">
+                <span class="module-number">03 / CONQUISTAR</span>
+                <img
+                  class="module-icon"
+                  src="assets/icons/png/modulos/focuslevel.png"
+                  alt=""
+                  width="76"
+                  height="76"
+                  loading="lazy"
+                />
+              </div>
               <h3>FocusLevel</h3>
               <p>
                 XP, níveis, missões e conquistas que tornam o progresso visível e ajudam
@@ -565,7 +612,17 @@
             </article>
 
             <article class="module-card">
-              <span class="module-number">04 / CONECTAR</span>
+              <div class="module-card-header">
+                <span class="module-number">04 / CONECTAR</span>
+                <img
+                  class="module-icon"
+                  src="assets/icons/png/modulos/focusteams.png"
+                  alt=""
+                  width="76"
+                  height="76"
+                  loading="lazy"
+                />
+              </div>
               <h3>FocusTeams</h3>
               <p>
                 Equipes, comunidades, desafios coletivos e comunicação para evoluir com

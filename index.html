@@ -77,6 +77,9 @@
       }
 
       .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
         color: var(--color-text);
         font-size: 1.25rem;
         font-weight: 800;
@@ -84,7 +87,13 @@
         text-decoration: none;
       }
 
-      .brand span {
+      .brand-icon {
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+      }
+
+      .brand-accent {
         color: var(--color-accent);
       }
 
@@ -493,7 +502,15 @@
     <header class="site-header">
       <nav class="navigation container" aria-label="Navegação principal">
         <a class="brand" href="#inicio" aria-label="FocusMind — página inicial">
-          Focus<span>Mind</span>
+          <img
+            class="brand-icon"
+            src="assets/icons/png/navegacao/inicio_laranja.png"
+            alt=""
+            width="26"
+            height="26"
+            aria-hidden="true"
+          />
+          <span>Focus<span class="brand-accent">Mind</span></span>
         </a>
 
         <ul class="nav-links">

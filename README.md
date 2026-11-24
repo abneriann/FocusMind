@@ -8,9 +8,9 @@ Nosso objetivo é ajudar pessoas de diferentes idades a desenvolver seu potencia
 
 **Status:** Em planejamento e desenvolvimento inicial. As funcionalidades descritas são objetivos do projeto e ainda não estão disponíveis para uso.
 
-## Entrega acadêmica atual
+## Estado atual do repositório
 
-Esta primeira entrega de versionamento mantém o escopo propositalmente pequeno e contém:
+A versão inicial mantém o escopo propositalmente pequeno e contém:
 
 ```text
 FocusMind/
@@ -226,18 +226,21 @@ A ideia inicial de monitoramento inteligente dos estudos evoluiu para um ecossis
 
 [Documentação e planejamento no Notion](https://app.notion.com/p/31f0c2a5f910809ea41fdaf2f5c19c55)
 
-## Desenvolvedores
+## Responsável pelo projeto
 
-O FocusMind está sendo desenvolvido por:
+- **Abner Ian Batista de Alencar (Abner Alencar)** — idealização, desenvolvimento e manutenção do FocusMind.
 
-- **Abner Alencar** — Desenvolvedor
-- **Marcelo Sanches** — Desenvolvedor
+O FocusMind é um projeto independente em desenvolvimento inicial. A publicação do código tem como objetivo permitir aprendizado, transparência e futuras contribuições da comunidade.
 
-Juntos, trabalhamos para transformar o FocusMind em uma plataforma de evolução pessoal acessível, moderna e integrada.
+## Contribuições
+
+Sugestões, relatos de problemas e propostas de melhoria podem ser enviados pelas *Issues* do GitHub. Contribuições em código poderão ser avaliadas por meio de *Pull Requests*, respeitando a visão e os objetivos do projeto.
 
 ## Licença
 
-Ainda não definida. O projeto está em fase inicial de desenvolvimento e planejamento.
+O código-fonte deste repositório é disponibilizado sob a **Licença MIT**. Consulte o arquivo [LICENSE](LICENSE).
+
+A licença do código **não concede direitos de uso sobre o nome, logotipo ou identidade visual da marca FocusMind**.
 
 ---
 
